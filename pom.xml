@@ -141,7 +141,7 @@
                     <plugin>
                         <groupId>com.vaadin</groupId>
                         <artifactId>flow-maven-plugin</artifactId>
-                        <version>0.0.4</version>
+                        <version>1.0-SNAPSHOT</version>
                         <executions>
                             <execution>
                                 <goals>
@@ -150,6 +150,7 @@
                                 </goals>
                                 <configuration>
                                     <transpileOutputDirectory>${transpilation.output}</transpileOutputDirectory>
+                                    <bundle>true</bundle>
                                 </configuration>
                             </execution>
                         </executions>
