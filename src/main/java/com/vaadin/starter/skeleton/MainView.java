@@ -32,7 +32,11 @@ public class MainView extends VerticalLayout {
 
         Button button = new Button("Click me", event -> template.setValue("Clicked!"));
 
-        add(button, template);
+        Checkbox checkbox = new Checkbox("My checkbox");
+        checkbox.addValueChangeListener(e -> System.out.println("CHECKBOX: " + e.getValue()));
+        checkbox.setValue(true);
+
+        add(button, checkbox, template);
     }
 
 }
