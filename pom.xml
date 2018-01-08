@@ -17,8 +17,8 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
         <!-- Dependencies -->
-        <vaadin.version>10.0.0.alpha8</vaadin.version>
-        <flow.version>1.0.0.alpha12</flow.version>
+        <vaadin.version>10.0.0.alpha11</vaadin.version>
+        <flow.version>1.0.0.alpha16</flow.version>
         <servlet.api.version>3.1.0</servlet.api.version>
         <slf4j.version>1.7.25</slf4j.version>
 
@@ -77,12 +77,12 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-button-flow</artifactId>
-            <version>1.0.0.alpha3</version>
+            <version>1.0.0.alpha4</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-ordered-layout-flow</artifactId>
-            <version>1.0.0.alpha3</version>
+            <version>1.0.0.alpha6</version>
         </dependency>
 
         <!-- Add valo theme to use in styles.html -->
