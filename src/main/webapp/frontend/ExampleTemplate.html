@@ -15,17 +15,20 @@
   -->
 
 <!-- Dependency resources -->
+<link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="bower_components/polymer/polymer-element.html">
+<link rel="import" href="bower_components/vaadin-button/vaadin-button.html">
 
 <!-- Defines the example-template element -->
 <dom-module id="example-template">
     <template>
         <span>[[value]]</span>
+        <vaadin-button id="correct-button">Correct button</vaadin-button>
     </template>
 
     <!-- Polymer boilerplate to register the example-template element -->
     <script>
-        class ExampleTemplate extends Polymer.Element {
+        class ExampleTemplate extends Polymer.mixinBehaviors([Polymer.IronResizableBehavior], Polymer.Element) {
             static get is() {
                 return 'example-template'
             }

@@ -15,11 +15,13 @@
  */
 package com.vaadin.starter.skeleton;
 
-import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.HtmlImport;
-import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
-import com.vaadin.flow.templatemodel.TemplateModel;
+import com.vaadin.flow.model.TemplateModel;
 import com.vaadin.starter.skeleton.ExampleTemplate.ExampleModel;
+import com.vaadin.ui.Tag;
+import com.vaadin.ui.button.Button;
+import com.vaadin.ui.common.HtmlImport;
+import com.vaadin.ui.polymertemplate.Id;
+import com.vaadin.ui.polymertemplate.PolymerTemplate;
 
 /**
  * Simple template example.
@@ -35,6 +37,9 @@ public class ExampleTemplate extends PolymerTemplate<ExampleModel> {
 
         void setValue(String value);
     }
+
+    @Id("correct-button")
+    private Button correctButton;
 
     public ExampleTemplate() {
         // Set the initial value to the "value" property.

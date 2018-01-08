@@ -15,10 +15,9 @@
  */
 package com.vaadin.starter.skeleton;
 
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.dependency.HtmlImport;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.router.Route;
+import com.vaadin.router.Route;
+import com.vaadin.ui.common.HtmlImport;
+import com.vaadin.ui.layout.VerticalLayout;
 
 /**
  * The main view contains a button and a template element.
@@ -28,15 +27,7 @@ import com.vaadin.flow.router.Route;
 public class MainView extends VerticalLayout {
 
     public MainView() {
-        ExampleTemplate template = new ExampleTemplate();
-
-        Button button = new Button("Click me", event -> template.setValue("Clicked!"));
-
-        Checkbox checkbox = new Checkbox("My checkbox");
-        checkbox.addValueChangeListener(e -> System.out.println("CHECKBOX: " + e.getValue()));
-        checkbox.setValue(true);
-
-        add(button, checkbox, template);
+        add(new ExampleTemplate());
     }
 
 }
