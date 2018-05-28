@@ -1,19 +1,35 @@
 <!-- Dependency resources -->
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/polymer/lib/elements/dom-repeat.html">
 
 <!-- Defines the example-template element -->
 <dom-module id="example-template">
     <template>
-        <span>[[value]]</span>
+        <h2>[[title]]</h2>
+        <template is="dom-repeat" items="{{persons}}">
+            <p>[[item.name]] is [[item.age]] years old!</p>
+        </template>
     </template>
 
     <!-- Polymer boilerplate to register the example-template element -->
     <script>
-        class ExampleTemplate extends Polymer.Element {
-            static get is() {
-                return 'example-template'
-            }
+      class ExampleTemplate extends Polymer.Element {
+        static get is() {
+          return 'example-template'
         }
-        customElements.define(ExampleTemplate.is, ExampleTemplate);
+
+        static get properties() {
+          return {
+            title: {
+              type: String
+            },
+            persons: {
+              type: Array,
+              value: []
+            }
+          };
+        }
+      }
+      customElements.define(ExampleTemplate.is, ExampleTemplate);
     </script>
 </dom-module>

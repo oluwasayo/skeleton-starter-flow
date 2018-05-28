@@ -6,6 +6,8 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.templatemodel.TemplateModel;
 import com.vaadin.starter.skeleton.ExampleTemplate.ExampleModel;
 
+import java.util.List;
+
 /**
  * Simple template example.
  */
@@ -17,19 +19,50 @@ public class ExampleTemplate extends PolymerTemplate<ExampleModel> {
      * Template model which defines the single "value" property.
      */
     public interface ExampleModel extends TemplateModel {
+        void setPersons(List<Person> persons);
 
-        void setValue(String value);
+        void setTitle(String title);
     }
 
     public ExampleTemplate() {
-        // Set the initial value to the "value" property.
-        getModel().setValue("Not clicked");
+        getModel().setTitle("Default Title");
+        getModel().setPersons(MainView.randomPersons());
     }
 
-    /*
-     * Allow setting the value property from outside of the class.
-     */
-    public void setValue(String value) {
-        getModel().setValue(value);
+    public void setPersons(List<Person> persons) {
+        getModel().setPersons(persons);
+    }
+
+    public void setTitle(String title) {
+        getModel().setTitle(title);
+    }
+
+    public static final class Person {
+        private String name;
+        private int age;
+
+        public Person() {
+        }
+
+        public Person(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
     }
 }
